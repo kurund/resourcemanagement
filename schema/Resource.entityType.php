@@ -28,7 +28,7 @@ return [
       'description' => E::ts('Resource name'),
     ],
     'description' => [
-      'title' => E::ts('description'),
+      'title' => E::ts('Description'),
       'sql_type' => 'longtext',
       'input_type' => 'RichTextEditor',
       'description' => E::ts('Resource description'),
