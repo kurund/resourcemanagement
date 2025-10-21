@@ -44,7 +44,7 @@ return [
         'saved_search_id.name' => 'Resource_Listing',
         'type' => 'table',
         'settings' => [
-          'description' => E::ts(NULL),
+          'description' => E::ts(''),
           'sort' => [],
           'limit' => 50,
           'pager' => [],
@@ -64,6 +64,18 @@ return [
             ],
             [
               'links' => [
+                [
+                  'path' => 'civicrm/resourcebooking#?resource_id=[id]',
+                  'icon' => 'fa-rocket',
+                  'text' => E::ts('Book'),
+                  'style' => 'info',
+                  'conditions' => [],
+                  'task' => '',
+                  'entity' => '',
+                  'action' => '',
+                  'join' => '',
+                  'target' => 'crm-popup',
+                ],
                 [
                   'entity' => 'Resource',
                   'action' => 'update',

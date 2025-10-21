@@ -6,8 +6,8 @@ return [
   'table' => 'civicrm_resource_booking',
   'class' => 'CRM_Resourcemanagement_DAO_ResourceBooking',
   'getInfo' => fn() => [
-    'title' => E::ts('ResourceBooking'),
-    'title_plural' => E::ts('ResourceBookings'),
+    'title' => E::ts('Resource Booking'),
+    'title_plural' => E::ts('Resource Bookings'),
     'description' => E::ts('Resource Booking'),
     'log' => TRUE,
   ],

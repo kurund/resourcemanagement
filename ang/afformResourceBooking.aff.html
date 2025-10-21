@@ -1,0 +1,9 @@
+<af-form ctrl="afform">
+  <af-entity type="ResourceBooking" name="ResourceBooking1" label="Resource Booking 1" actions="{create: true, update: false}" security="RBAC" data="{}" url-autofill="0" />
+  <fieldset af-fieldset="ResourceBooking1" class="af-container">
+    <af-field name="booking_code" />
+    <af-field name="contact_id" />
+    <af-field name="resource_id" defn="{input_type: 'Hidden', input_attrs: {}, label: false}" />
+  </fieldset>
+  <button class="af-button btn btn-primary" crm-icon="fa-check" ng-click="afform.submit()" ng-if="afform.showSubmitButton">Book now</button>
+</af-form>
