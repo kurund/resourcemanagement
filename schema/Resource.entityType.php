@@ -33,8 +33,8 @@ return [
       'input_type' => 'RichTextEditor',
       'description' => E::ts('Resource description'),
       'input_attrs' => [
-        'rows' => 8,
-        'cols' => 60,
+        'rows' => 4,
+        'cols' => 30,
       ],
     ],
     'resource_type_id' => [
@@ -52,5 +52,8 @@ return [
     ],
   ],
   'getIndices' => fn() => [],
-  'getPaths' => fn() => [],
+  'getPaths' => fn() => [
+    'add' => 'civicrm/resource?reset=1',
+    'update' => 'civicrm/resource#?Resource1=[id]',
+  ],
 ];

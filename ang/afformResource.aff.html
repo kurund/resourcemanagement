@@ -1,0 +1,9 @@
+<af-form ctrl="afform">
+  <af-entity type="Resource" name="Resource1" label="Resource 1" actions="{create: true, update: true}" security="RBAC" url-autofill="1" />
+  <fieldset af-fieldset="Resource1" class="af-container" af-title="Resource 1">
+    <af-field name="name" />
+    <af-field name="resource_type_id" />
+    <af-field name="description" />
+  </fieldset>
+  <button class="af-button btn btn-primary" crm-icon="fa-check" ng-click="afform.submit()" ng-if="afform.showSubmitButton">Submit</button>
+</af-form>

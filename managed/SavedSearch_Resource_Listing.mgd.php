@@ -1,0 +1,120 @@
+<?php
+use CRM_Resourcemanagement_ExtensionUtil as E;
+
+return [
+  [
+    'name' => 'SavedSearch_Resource_Listing',
+    'entity' => 'SavedSearch',
+    'cleanup' => 'unused',
+    'update' => 'unmodified',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'name' => 'Resource_Listing',
+        'label' => E::ts('Resource Listing'),
+        'api_entity' => 'Resource',
+        'api_params' => [
+          'version' => 4,
+          'select' => [
+            'id',
+            'description',
+            'name',
+            'resource_type_id:label',
+          ],
+          'orderBy' => [],
+          'where' => [],
+          'groupBy' => [],
+          'join' => [],
+          'having' => [],
+        ],
+      ],
+      'match' => ['name'],
+    ],
+  ],
+  [
+    'name' => 'SavedSearch_Resource_Listing_SearchDisplay_Resource_Listing_Table_1',
+    'entity' => 'SearchDisplay',
+    'cleanup' => 'unused',
+    'update' => 'unmodified',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'name' => 'Resource_Listing_Table_1',
+        'label' => E::ts('Resource Listing Table 1'),
+        'saved_search_id.name' => 'Resource_Listing',
+        'type' => 'table',
+        'settings' => [
+          'description' => E::ts(NULL),
+          'sort' => [],
+          'limit' => 50,
+          'pager' => [],
+          'placeholder' => 5,
+          'columns' => [
+            [
+              'type' => 'field',
+              'key' => 'name',
+              'label' => E::ts('Name'),
+              'sortable' => TRUE,
+            ],
+            [
+              'type' => 'field',
+              'key' => 'resource_type_id:label',
+              'label' => E::ts('Type'),
+              'sortable' => TRUE,
+            ],
+            [
+              'links' => [
+                [
+                  'entity' => 'Resource',
+                  'action' => 'update',
+                  'join' => '',
+                  'target' => 'crm-popup',
+                  'icon' => 'fa-pencil',
+                  'text' => E::ts('Edit'),
+                  'style' => 'default',
+                  'path' => '',
+                  'task' => '',
+                  'conditions' => [],
+                ],
+                [
+                  'task' => 'delete',
+                  'entity' => 'Resource',
+                  'join' => '',
+                  'target' => 'crm-popup',
+                  'icon' => 'fa-trash',
+                  'text' => E::ts('Delete'),
+                  'style' => 'danger',
+                  'path' => '',
+                  'action' => '',
+                  'conditions' => [],
+                ],
+              ],
+              'type' => 'links',
+              'alignment' => 'text-right',
+            ],
+          ],
+          'actions' => FALSE,
+          'classes' => ['table', 'table-striped'],
+          'toolbar' => [
+            [
+              'entity' => 'Resource',
+              'action' => 'add',
+              'join' => '',
+              'target' => 'crm-popup',
+              'icon' => 'fa-plus',
+              'text' => E::ts('Add Resource'),
+              'style' => 'primary',
+              'path' => '',
+              'task' => '',
+              'conditions' => [],
+            ],
+          ],
+        ],
+      ],
+      'match' => [
+        'saved_search_id',
+        'name',
+      ],
+    ],
+  ],
+];
